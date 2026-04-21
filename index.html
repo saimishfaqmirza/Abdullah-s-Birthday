@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullah's Birthday</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0b0b1f;
+  color: white;
+  overflow: hidden;
+}
+
+/* 🌌 Star Background */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    10vw 20vh white, 30vw 40vh white, 50vw 60vh white,
+    70vw 30vh white, 90vw 80vh white, 20vw 70vh white,
+    80vw 10vh white, 60vw 50vh white;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {opacity: 0.3;}
+  to {opacity: 1;}
+}
+
+/* Pages */
+.page {
+  display: none;
+  height: 100vh;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  animation: fade 0.6s;
+}
+
+.active { display: flex; }
+
+@keyframes fade {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+/* Text */
+h1 {
+  font-family: 'Baloo 2', cursive;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Baloo 2', cursive;
+  margin-bottom: 70px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+/* BUTTON */
+button {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(45deg, #ff4d6d, #ff1f4b);
+  color: white;
+  width: 80%;
+  max-width: 260px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 77, 109, 0.5);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* 💌 ENVELOPE */
+.envelope {
+  width: 200px;
+  height: 130px;
+  background: linear-gradient(45deg,#ff4d6d,#ff1f4b);
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 65px solid #ff6b81;
+  top: -65px;
+  left: 0;
+  transition: 0.6s;
+}
+
+.envelope:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 15px 35px rgba(255, 77, 109, 0.6);
+}
+
+.envelope:hover::before {
+  transform: rotateX(20deg);
+}
+
+.open::before {
+  transform: rotateX(180deg);
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile optimization */
+@media (max-width: 400px) {
+  h1 { font-size: 1.6rem; }
+  p { font-size: 0.9rem; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>🌌 Ustaddd G</h1>
+  <p>kii hal ae? fit oo na?</p>
+  <button onclick="start()">Dabaiyee na🤤💦</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h2>khol do(envelope)👉👈</h2>
+  <div class="envelope" onclick="openLetter(this)"></div>
+</div>
+
+<!-- 🎵 Music -->
+<audio id="music" loop>
+  <source src="birthday.mpeg" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <h1>JANAM DIN MUBARAK
+    <br>BOSS💗✨</h1>
+  <p>
+   Janu g Mubarak ho 20 ka hogya hai koi hehe😁.
+    muje boht yad ate hein college k din or wo phuttay bhi boht zyada yad ati hai
+     Tujay pta hai mein sochta tha k koi mera dost bhi ho jese logo k dekhta hun 
+    itne pkay or itne time se dost... Allah ne sun li thi ❤️ 
+    or In sha Allah ab hmein log dekh kr khein gy aesa 🥹
+      Pareshan na hua kro boss  jo kuch ho jaye Allah pr bharosa rkha kro 🫠
+    jesi bhi pareshani ho office ki, paiso ki ya koi or
+    hmesha bateesi khol k rkha kr 😁
+    Or han yaad aya tu sirf dost ni mera bhai hai 🫂 meri jaan hai 
+    Heera hai 💎 hmesha mere sath rhna khushi ho k gham hmesha 🤝
+    Love you hogya Sarkarrr ❤️🔥
+  </p>
+  <button onclick="nextPage(4)">Dekhe ga?</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <h1>Yh le</h1>
+  <p>pictures ki baat kr rha tha🙂</p>
+  <br>
+  <div class="gallery">
+    <img src="WhatsApp Image 2026-04-20 at 17.32.19.jpeg">
+    <img src="WhatsApp Image 2026-04-20 at 17.32.26 (1).jpeg">
+    <img src="WhatsApp Image 2026-04-20 at 17.32.26.jpeg">
+    <img src="WhatsApp Image 2026-04-20 at 17.32.27.jpeg">
+  </div>
+  <button onclick="nextPage(5)">Or kuch?</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+  <h1>Bhaiii</h1>
+  <p>bs kr de na... soo jaa💋😴</p>
+</div>
+
+<script>
+
+/* Envelope open + music */
+function openLetter(el) {
+  el.classList.add("open");
+
+  setTimeout(() => {
+    nextPage(3);
+
+    // 🎵 Music yahan start hoga
+    let m = document.getElementById("music");
+    m.play().catch(() => {});
+
+  }, 700);
+}
+
+/* Start (no music here now) */
+function start() {
+  nextPage(2);
+}
+
+/* Navigation */
+function nextPage(n) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById("page" + n).classList.add("active");
+}
+
+</script>
+
+</body>
+</html>
